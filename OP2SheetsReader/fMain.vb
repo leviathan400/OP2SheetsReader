@@ -3,17 +3,21 @@
 ' OP2SheetsReader
 ' https://github.com/leviathan400/OP2SheetsReader
 '
-' Outpost 2 sheets reader. Open and edit sheets .txt files.
+' Outpost 2 sheets reader. Open and edit sheets .txt files
+' Sheets files used to be stored in sheets.vol
 '
 '
 ' Outpost 2: Divided Destiny is a real-time strategy video game released in 1997.
 
 Public Class fMain
 
+    'Sheets Files:
     'building.txt, mines.txt, morale.txt, space.txt, vehicles.txt and weapons.txt
 
+#Region "Private Fields"
+
     Public ApplicationName As String = "OP2SheetsReader"
-    Public Version As String = "0.6"
+    Public Version As String = "0.6.5.0"
 
     Private FormTitle As String = "Outpost 2 Sheets Reader"
     Private CurrentSheetsFile As String = Nothing
@@ -26,8 +30,13 @@ Public Class fMain
     Private OriginalFilePath As String
     Private FileEncoding As System.Text.Encoding
 
-    Private Sub fMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+#End Region
 
+#Region "Form Events"
+    ''' <summary>
+    ''' Initializes the form when it loads, sets up UI elements and plays startup sound
+    ''' </summary>
+    Private Sub fMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Debug.WriteLine("--- " & ApplicationName & " Started ---")
         Me.Icon = My.Resources.compatibility
         Me.Text = FormTitle
@@ -40,18 +49,27 @@ Public Class fMain
         player.Play()
     End Sub
 
+    ''' <summary>
+    ''' Handles the Open button click to open a sheets file
+    ''' </summary>
     Private Sub btnOpen_Click(sender As Object, e As EventArgs) Handles btnOpen.Click
         ' Open a sheets file
         OpenSheetsFile()
-
     End Sub
 
+    ''' <summary>
+    ''' Handles the Save button click to save changes to the sheets file
+    ''' </summary>
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         ' Save edits to sheets file
         SaveSheetsFile()
-
     End Sub
+#End Region
 
+#Region "Private Methods"
+    ''' <summary>
+    ''' Opens and parses an Outpost 2 sheets file, loading the data into the DataGridView
+    ''' </summary>
     Private Sub OpenSheetsFile()
         ' Create and configure OpenFileDialog
         Dim openFileDialog As New OpenFileDialog()
@@ -286,6 +304,9 @@ Public Class fMain
         End If
     End Sub
 
+    ''' <summary>
+    ''' Saves the current DataGridView data back to the sheets file, preserving original structure and creating a backup (.bak)
+    ''' </summary>
     Private Sub SaveSheetsFile()
         Try
             ' Create backup of original file first
@@ -398,5 +419,6 @@ Public Class fMain
 
         End Try
     End Sub
+#End Region
 
 End Class
