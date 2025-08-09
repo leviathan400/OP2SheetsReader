@@ -4,11 +4,11 @@
 
 ## What is it?
 
-View and edit Outpost 2: Divided Destiny sheets files. These configuration files (building.txt, mines.txt, morale.txt, space.txt, vehicles.txt and weapons.txt) were originally stored in sheets.vol. The OPU version unpacks these to `\OPU\base\sheets`. The demo techs are stored in '\OPU\maps\OfficialDemos'.
+View and edit Outpost 2: Divided Destiny sheets files. These configuration files (building.txt, mines.txt, morale.txt, space.txt, vehicles.txt and weapons.txt) were originally stored in sheets.vol. The OPU version unpacks these to `\OPU\base\sheets`. The demo techs are stored in `\OPU\maps\OfficialDemos`.
 
-The Outpost 2 sheets files are text-based configuration files that define the stats and properties of all game elements - including building costs, vehicle capabilities, weapon damage, mining efficiency, and colonist morale systems. These files control the numerical balance of individual units and structures, while the tech tree (configured separately) determines research progression and what technologies unlock which items.
+The Outpost 2 sheets files are text-based configuration files that define the stats and properties of all game elements - including building costs, vehicle capabilities, weapon damage, mining efficiency, and colonist morale systems. These files control the numerical balance of individual units and structures, while the tech tree (configured separately) determines research progression, what technologies unlock which items and upgrades.
 
-## Sheet Files Overview
+## Sheets Files Overview
 
 **building.txt** - Defines all structures including hit points, armor, build costs, power requirements, storage capacity, and worker needs for all structures in the game.
 
